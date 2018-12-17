@@ -120,6 +120,11 @@ function! AutoPairsInsert(key)
     return a:key
   end
 
+  " Ignore auto close if current character is not empty
+  if current_char != "" && current_char != " " && current_char != ")" && current_char != "]" && current_char != "}"
+    return a:key
+  endif
+
   " The key is difference open-pair, then it means only for ) ] } by default
   if !has_key(b:AutoPairs, a:key)
     let b:autopairs_saved_pair = [a:key, getpos('.')]
