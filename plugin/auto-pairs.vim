@@ -211,7 +211,7 @@ func! AutoPairsInsert(key)
 
   " Ignore auto close if current character is not empty
   let cur = get(split(after, '\zs'), 0, '')
-  if cur != "" && cur != " " && cur != ")" && cur != "]" && cur != "}"
+  if cur != "" && cur != " " && cur != "\t" && cur != ")" && cur != "]" && cur != "}"
     return a:key
   endif
 
